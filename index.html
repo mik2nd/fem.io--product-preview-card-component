@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="./images/favicon-32x32.png"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital@0;1&display=swap"
+         rel="stylesheet"
+      />
+
+      <title>Frontend Mentor | Product preview card component</title>
+
+      <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+      <style>
+         .attribution {
+            font-size: 11px;
+            text-align: center;
+         }
+         .attribution a {
+            color: hsl(228, 45%, 44%);
+         }
+         :root {
+            /* ### Primary */
+            --darkcyan: hsl(158, 36%, 37%);
+            --cream: hsl(30, 38%, 92%);
+            /* ### Neutral */
+            --verydarkblue: hsl(212, 21%, 14%);
+            --darkgrayishblue: hsl(228, 12%, 48%);
+            --white: hsl(0, 0%, 100%);
+
+            --ff-primary: "Fraunces";
+            --ff-secondary: "Montserrat";
+         }
+
+         *,
+         *::after,
+         *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+         p,
+         a {
+            font-family: var(--ff-secondary);
+         }
+         p {
+            color: var(--darkgrayishblue);
+         }
+         span.product__type {
+            font-weight: bold;
+            font-family: var(--ff-secondary);
+         }
+         .product__type {
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            color: var(--darkgrayishblue);
+         }
+         body {
+            font-family: var(--ff-primary);
+            font-size: 14px;
+            background-color: var(--cream);
+            margin: 15% auto;
+         }
+         .container {
+            max-width: 40ch;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white);
+            overflow: hidden;
+            border-radius: 1rem;
+         }
+         .container__image img {
+            width: 100%;
+            object-position: bottom;
+            background-size: cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+         }
+         .container__image {
+            overflow: hidden;
+         }
+         .container__image-desktop {
+            display: none;
+         }
+         .container__product {
+            padding: 1rem 0.5rem;
+         }
+         .product__name {
+            margin-block: 1rem;
+         }
+
+         .product__price {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+         }
+         .product__price > p {
+            text-decoration: line-through;
+         }
+         .product__price > h1 {
+            color: var(--darkcyan);
+            margin-block: 1rem;
+         }
+         a.product__add-cart {
+            padding: 1em 2em;
+            margin-block: 1rem;
+            background-color: var(--darkcyan);
+            color: var(--white);
+            text-decoration: none;
+            justify-content: center;
+            display: flex;
+            gap: 1rem;
+            border-radius: 0.5em;
+            font-weight: bold;
+         }
+         a.product__add-cart:hover {
+            background-color: var(--verydarkblue);
+         }
+
+         @media (min-width: 720px) {
+            .container__image-mobile {
+               display: none;
+            }
+            .container__image-desktop {
+               display: block;
+            }
+            .container {
+               flex-direction: row;
+               max-width: 64ch;
+            }
+            a.product__add-cart {
+               margin-block: 1rem;
+               border: 1px red solid;
+            }
+            .product__name {
+               max-width: 9ch;
+               margin-block: 0.3rem;
+            }
+            .product__description {
+               margin-top: 0.3rem;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <main>
+         <div class="container">
+            <div class="container__image container__image-desktop">
+               <img src="images/image-product-desktop.jpg" alt="" />
+            </div>
+            <div class="container__image container__image-mobile">
+               <img src="images/image-product-mobile.jpg" alt="" />
+            </div>
+            <div class="container__product">
+               <span class="product__type">Perfume</span>
+               <h1 class="product__name">Gabrielle Essence Eau De Parfum</h1>
+               <p class="product__description">
+                  A floral, solar and voluptuous interpretation composed by
+                  Olivier Polge, Perfumer-Creator for the House of CHANEL.
+               </p>
+               <div class="product__price">
+                  <h1>$149.99</h1>
+                  <p>$169.99</p>
+               </div>
+
+               <a href="#" class="product__add-cart"
+                  ><img src="images/icon-cart.svg" alt="" /> Add to Cart</a
+               >
+            </div>
+         </div>
+      </main>
+
+      <div class="attribution">
+         Challenge by
+         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+         >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+   </body>
+</html>
